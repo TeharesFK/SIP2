@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 public class ListReader {
     public void printListOnConsole(ArrayList<String> stuArr){
         int q=5;
@@ -22,26 +21,6 @@ public class ListReader {
         }
 
     }
-    public void printListOnBox(ArrayList<String> stuArr){
-
-        int q=5;
-        String combineArr ="ID  Name    M   F   H1  H2  \n";
-        for (int i =0; i < stuArr.size(); i++)
-        {
-
-            if(i<q)
-            {
-                combineArr+=(stuArr.get(i)+"    ");
-            }
-            else
-            {
-                combineArr+=(stuArr.get(i)+"\n");
-                q = q + 6;
-            }
-
-        }
-        JOptionPane.showMessageDialog(null,combineArr,"boxtest",JOptionPane.INFORMATION_MESSAGE);
-
-    }
+    
 
 }
