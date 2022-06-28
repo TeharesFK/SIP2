@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class InfoSystem {
 
@@ -22,8 +23,8 @@ public class InfoSystem {
 
     public void exitSystem(){
         try {
-            FileWork ft =new FileWork();
-            ft.arrToFile(stuArr);
+            FileWork fw =new FileWork();
+            fw.arrToFile(stuArr);
         }catch (IOException e){
             System.out.println("Filework2>InfoSystem Error");
             e.printStackTrace();
@@ -57,4 +58,16 @@ public class InfoSystem {
             stuArr.remove((studentID - 1)*6);
         resetID();
     }
+
+    public void addStudent(){
+        ListWork lw  =new ListWork(stuArr);
+        lw.writeStudent();
+    }
+
+    public void viewList(){
+        ListWork lw =new ListWork(stuArr);
+        System.out.println("ID"+"\tName"+"\tM"+"\tF"+"\tH1"+"\tH2");
+        lw.printListOnConsole();
+    }
+
 }
